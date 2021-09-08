@@ -4,6 +4,7 @@ public class DatoEstudiante {
 
 	private String cedulaEstudiante;
 	
+	//METODOS GET Y SET
 	public String getCedulaEstudiante() {
 		return cedulaEstudiante;
 	}

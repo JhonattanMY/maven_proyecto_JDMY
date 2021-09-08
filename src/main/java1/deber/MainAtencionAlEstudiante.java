@@ -9,6 +9,8 @@ public class MainAtencionAlEstudiante {
 		Scanner leeInt = new Scanner(System.in);
 		Scanner lee = new Scanner(System.in);
 
+		int a = 5;
+		DatoEstudiante base[] = new DatoEstudiante[a];
 		int opcion = 0;
 
 		DatoEstudiante primero = new DatoEstudiante();
@@ -25,46 +27,80 @@ public class MainAtencionAlEstudiante {
 			System.out.println("1<----Ingrese Estudiante");
 			System.out.println("2<----Buscar Estudiante");
 			System.out.println("3<----SALIR");
-			System.out.println("*******************************");
+			System.out.println("*******************************\n");
 			System.out.print("Ingrese una opcion: ");
 			opcion = leeInt.nextInt();
 
 			if (opcion == 1) {
 
-				System.out.println("\n**********************************************");
-				System.out.print("Ingrese el numero de cedula del estudiante 0: ");
-				primero.setCedulaEstudiante(lee.nextLine());
-				System.out.print("Ingrese el numero de cedula del estudiante 1: ");
-				segundo.setCedulaEstudiante(lee.nextLine());
-				System.out.print("Ingrese el numero de cedula del estudiante 2: ");
-				tercero.setCedulaEstudiante(lee.nextLine());
-				System.out.print("Ingrese el numero de cedula del estudiante 3: ");
-				cuarto.setCedulaEstudiante(lee.nextLine());
-				System.out.print("Ingrese el numero de cedula del estudiante 4: ");
-				quinto.setCedulaEstudiante(lee.nextLine());
+				if (a == 5) {
+					a--;
+					System.out.println("\nposicion [" + a + "] libre");
+					System.out.println("**********************************************");
+					System.out.print("Ingrese el numero de cedula del estudiante : ");
+					quinto.setCedulaEstudiante(lee.nextLine());
+					System.out.println("");
 
-				DatoEstudiante base[] = new DatoEstudiante[5];
+				} else if (a == 3) {
+					System.out.println("\nposicion [" + a + "] libre");
+					System.out.println("**********************************************");
+					System.out.print("Ingrese el numero de cedula del estudiante : ");
+					cuarto.setCedulaEstudiante(lee.nextLine());
+					System.out.println("");
+
+				} else if (a == 2) {
+					System.out.println("\nposicion [" + a + "] libre");
+					System.out.println("**********************************************");
+					System.out.print("Ingrese el numero de cedula del estudiante : ");
+					tercero.setCedulaEstudiante(lee.nextLine());
+					System.out.println("");
+
+				} else if (a == 1) {
+					System.out.println("\nposicion [" + a + "] libre");
+					System.out.println("**********************************************");
+					System.out.print("Ingrese el numero de cedula del estudiante : ");
+					segundo.setCedulaEstudiante(lee.nextLine());
+					System.out.println("");
+
+				} else if (a == 0) {
+					System.out.println("\nposicion [" + a + "] libre");
+					System.out.println("**********************************************");
+					System.out.print("Ingrese el numero de cedula del estudiante : ");
+					primero.setCedulaEstudiante(lee.nextLine());
+					System.out.println("");
+
+				}
+
 				base[0] = primero;
 				base[1] = segundo;
 				base[2] = tercero;
 				base[3] = cuarto;
 				base[4] = quinto;
+				a--;
 
 			} else if (opcion == 2) {
+
+				System.out.print("\nIngrese numero de cedula a buscar: ");
+				String busqueda = lee.nextLine();
+
+				for (int i = 0; i < 5; i++) {
+					DatoEstudiante estudiante = base[i];
+					String cedula = estudiante.getCedulaEstudiante();
+					busqueda.equals(cedula);
+				}
 
 				String datos = (primero.getCedulaEstudiante() + " " + segundo.getCedulaEstudiante() + " "
 						+ tercero.getCedulaEstudiante() + " " + cuarto.getCedulaEstudiante() + " "
 						+ quinto.getCedulaEstudiante());
 
-				System.out.print("\nIngrese numero de cedula a buscar: ");
-				String busqueda = lee.nextLine();
 				boolean resultado = datos.contains(busqueda);
 
 				if (resultado == true) {
 					System.out.println("\n>>>>> Si contiene Estudiante <<<<<\n");
-				} else
+				} else {
 					System.out.println("\n>>>>> No contiene Estudiante <<<<<\n");
-			} else {
+
+				}
 
 			}
 		} while (opcion != 3);
