@@ -83,17 +83,16 @@ public class MainAtencionAlEstudiante {
 				System.out.print("\nIngrese numero de cedula a buscar: ");
 				String busqueda = lee.nextLine();
 
+				boolean resultado = false;
+
 				for (int i = 0; i < 5; i++) {
 					DatoEstudiante estudiante = base[i];
 					String cedula = estudiante.getCedulaEstudiante();
-					busqueda.equals(cedula);
+					boolean resultadoLocal = busqueda.equals(cedula);
+					if (resultadoLocal == true) {
+						resultado = true;
+					}
 				}
-
-				String datos = (primero.getCedulaEstudiante() + " " + segundo.getCedulaEstudiante() + " "
-						+ tercero.getCedulaEstudiante() + " " + cuarto.getCedulaEstudiante() + " "
-						+ quinto.getCedulaEstudiante());
-
-				boolean resultado = datos.contains(busqueda);
 
 				if (resultado == true) {
 					System.out.println("\n>>>>> Si contiene Estudiante <<<<<\n");
