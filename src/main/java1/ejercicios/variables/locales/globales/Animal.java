@@ -3,43 +3,40 @@ package ejercicios.variables.locales.globales;
 public class Animal {
 
 	// VARIABLES GlOBALES: SE DECLARAN A NIVEL DE CLASE.
+	// GLOBALES DE INSTANCIA: PERTENECE SOLO A LA INSTANCIA.
+	// GOBALES STATICA: PERTENECE SOLO A LA CLASE, SE LO PUEDE USAR EN CUALQUIER
+	// CLASE.
 	private String nombre;
 	private String tipoAnimal;
 	private String nombreCientifico;
 	private String caracteristica;
 	private String habitad;
-	
-	//VARIABLES GLOBALES ESTATICAS: 
+
+	// VARIABLES GLOBALES ESTATICAS:
 	private static int edad;
 	private static int peso;
 	private static String estatura;
 
-	// VARIABLES LOCALES: SE DECLARAN A NIVEL DE METODOS
+	// VARIABLE CONSTANTE (SU NOMBRE DEBE SER EN MAYUSCULAS Y SEPARADO POR "_".
+	private static final String COLOR_ANIMAL = "blanco";
 
+	// PERTENCEN A LA INSTANCIA.
 	public void alimentarse() {
+		
+		// VARIABLES LOCALES: SE DECLARAN A NIVEL DE METODOS.
 		String tipoDeComida;
 		String horarioDeComida;
 		String cantidadDeComida;
 		String vitaminas;
 		String postre;
+		peso = 80;
 	}
-	
-//} else if (opcion == 2) {
-//
-//	String datos = (primero.getCedulaEstudiante() + " " + segundo.getCedulaEstudiante() + " "
-//			+ tercero.getCedulaEstudiante() + " " + cuarto.getCedulaEstudiante() + " "
-//			+ quinto.getCedulaEstudiante());
-//
-//	System.out.print("\nIngrese numero de cedula a buscar: ");
-//	String busqueda = lee.nextLine();
-//	boolean resultado = datos.contains(busqueda);
-//
-//	if (resultado == true) {
-//		System.out.println("\n>>>>> Si contiene Estudiante <<<<<\n");
-//	} else
-//		System.out.println("\n>>>>> No contiene Estudiante <<<<<\n");
-//} else {
-//
-//}
-//} while (opcion != 3);
+
+	// PERTENECE A LA CLASE - solo pueden utilizar variabels estaticas.
+	public static void correr() {
+		peso = 80;
+		//nombre="Kazuya";
+
+	}
+
 }
