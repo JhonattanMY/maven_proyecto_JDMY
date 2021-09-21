@@ -4,11 +4,12 @@ import java.time.LocalDate;
 
 public class CursoVacacional {
 
+	//Variables primitivas
 	private String nombre;
 	private LocalDate fechaInicio;
 	private LocalDate fechaFin;
 
-	// variable de mi propia clase creada
+	// variables de referencia
 	private Instructor instructor;
 
 	// METODOS SET Y GET
